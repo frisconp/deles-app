@@ -1,7 +1,9 @@
 import 'package:delesapp/bloc/article_bloc/article_bloc.dart';
 import 'package:delesapp/bloc/login_bloc/login_bloc.dart';
+import 'package:delesapp/bloc/register_bloc/register_bloc.dart';
 import 'package:delesapp/data/repositories/article_repository.dart';
 import 'package:delesapp/data/repositories/login_repository.dart';
+import 'package:delesapp/data/repositories/register_repository.dart';
 import 'package:delesapp/splash.dart';
 import 'package:delesapp/ui/login_page.dart';
 import 'package:delesapp/ui/main_page.dart';
@@ -43,6 +45,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider<LoginBloc>(
           create: (context) => LoginBloc(repository: LoginRepositoryList()),
+        ),
+        BlocProvider<RegisterBloc>(
+          create: (context) => RegisterBloc(repository: RegisterRepositoryList()),
         ),
       ],
       child: FlutterEasyLoading(

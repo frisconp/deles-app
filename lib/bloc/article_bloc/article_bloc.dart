@@ -12,7 +12,6 @@ class ArticleBloc extends Bloc<ArticleEvent, ArticleState> {
   ArticleBloc({@required this.repository});
 
   @override
-  // TODO: implement initialState
   ArticleState get initialState => ArticleInitialState();
 
   @override

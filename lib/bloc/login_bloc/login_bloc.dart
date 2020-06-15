@@ -12,7 +12,6 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   LoginBloc({@required this.repository});
 
   @override
-  // TODO: implement initialState
   LoginState get initialState => LoginInitialState();
 
   @override

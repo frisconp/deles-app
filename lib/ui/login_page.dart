@@ -66,16 +66,16 @@ class _LoginPageState extends State<LoginPage> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
-          'Masuk',
+          'Login',
           style: GoogleFonts.sourceSansPro(
             textStyle: TextStyle(
-              fontSize: 40,
+              fontSize: 30,
               fontWeight: FontWeight.bold,
             ),
           ),
         ),
         Text(
-          'Silakan masuk untuk melanjutkan.',
+          'Please login to continue.',
           style: GoogleFonts.sourceSansPro(
             textStyle: TextStyle(
               fontSize: 15,
@@ -125,7 +125,7 @@ class _LoginPageState extends State<LoginPage> {
             borderSide: BorderSide.none,
           ),
           contentPadding: EdgeInsets.all(10),
-          hintText: 'Alamat E-mail',
+          hintText: 'E-mail',
           hintStyle: GoogleFonts.sourceSansPro(
             color: Color.fromRGBO(219, 219, 219, 1),
           ),
@@ -173,7 +173,7 @@ class _LoginPageState extends State<LoginPage> {
             borderSide: BorderSide.none,
           ),
           contentPadding: EdgeInsets.all(10),
-          hintText: 'Kata Sandi',
+          hintText: 'Password',
           hintStyle: GoogleFonts.sourceSansPro(
             textStyle: TextStyle(
               color: Color.fromRGBO(219, 219, 219, 1),
@@ -205,7 +205,7 @@ class _LoginPageState extends State<LoginPage> {
           },
           child: Center(
             child: Text(
-              'Masuk',
+              'Login',
               style: GoogleFonts.sourceSansPro(
                 textStyle: TextStyle(
                   fontSize: 15,
@@ -228,7 +228,7 @@ class _LoginPageState extends State<LoginPage> {
           alignment: Alignment.center,
           margin: EdgeInsets.only(bottom: 10),
           child: Text(
-            'Anda belum memiliki akun?',
+            'Don\'t have an account?',
             style: GoogleFonts.sourceSansPro(
               fontSize: 15,
               color: Color.fromRGBO(219, 219, 219, 1),
@@ -255,7 +255,7 @@ class _LoginPageState extends State<LoginPage> {
               },
               child: Center(
                 child: Text(
-                  'Buat akun',
+                  'Create Account',
                   style: GoogleFonts.sourceSansPro(
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
@@ -271,19 +271,19 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   _buildInitialLogin() {
-    EasyLoading.show(status: 'Tunggu sebentar...');
+    EasyLoading.show(status: 'Please wait');
   }
 
   _buildLoadingLogin() {
-    EasyLoading.show(status: 'Memeriksa...');
+    EasyLoading.show(status: 'Checking');
   }
 
   _buildSuccessLogin() {
-    EasyLoading.showSuccess('Berhasil!');
+    EasyLoading.showSuccess('Success!');
   }
 
   _buildFailedLogin() {
-    EasyLoading.showError('Email atau Kata Sandi salah.');
+    EasyLoading.showError('E-mail & Password does\'nt match.');
   }
 
   _buildErrorLogin(String message) {

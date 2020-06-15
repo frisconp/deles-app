@@ -60,19 +60,19 @@ class _MainPageState extends State<MainPage> {
               tabs: [
                 GButton(
                   icon: Icons.home,
-                  text: 'Beranda',
+                  text: 'Home',
                 ),
                 GButton(
                   icon: Icons.history,
-                  text: 'Riwayat',
+                  text: 'History',
                 ),
                 GButton(
                   icon: Icons.favorite,
-                  text: 'Favorit',
+                  text: 'Favorite',
                 ),
                 GButton(
                   icon: Icons.person,
-                  text: 'Profil',
+                  text: 'Profile',
                 ),
               ],
               selectedIndex: _selectedIndex,

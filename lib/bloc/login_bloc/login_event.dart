@@ -10,6 +10,5 @@ class ValidateLoginEvent extends LoginEvent {
   ValidateLoginEvent({@required this.email, @required this.password});
 
   @override
-  // TODO: implement props
   List<Object> get props => throw UnimplementedError();
 }
