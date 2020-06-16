@@ -31,7 +31,7 @@ class BasePage extends StatelessWidget {
         children: <Widget>[
           Text(
             title,
-            style: GoogleFonts.sourceSansPro(
+            style: GoogleFonts.nunitoSans(
               fontSize: 30,
               fontWeight: FontWeight.bold,
               color: Colors.black,
@@ -64,7 +64,7 @@ class BasePage extends StatelessWidget {
     return Center(
       child: Text(
         message,
-        style: GoogleFonts.sourceSansPro(
+        style: GoogleFonts.nunitoSans(
           fontSize: 15,
           color: Colors.black,
         ),

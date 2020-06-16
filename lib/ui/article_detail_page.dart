@@ -11,6 +11,7 @@ class ArticleDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(
@@ -23,7 +24,7 @@ class ArticleDetailPage extends StatelessWidget {
         ),
         title: Text(
           article.title,
-          style: GoogleFonts.sourceSansPro(
+          style: GoogleFonts.nunitoSans(
             color: Colors.white,
             fontWeight: FontWeight.bold,
           ),
@@ -53,35 +54,44 @@ class ArticleDetailPage extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: EdgeInsets.all(20),
+          Container(
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: Theme.of(context).scaffoldBackgroundColor,
+              border: Border(
+                bottom: BorderSide(
+                  width: 1,
+                  color: Color.fromRGBO(219, 219, 219, 1),
+                ),
+              ),
+            ),
+            padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+            margin: EdgeInsets.only(bottom: 5),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Container(
-                  margin: EdgeInsets.only(bottom: 5),
-                  child: Text(
-                    article.title,
-                    style: GoogleFonts.sourceSansPro(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
+                Text(
+                  article.title,
+                  style: GoogleFonts.nunitoSans(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.only(bottom: 10),
-                  child: Text(
-                    article.createdAt,
-                    style: GoogleFonts.sourceSansPro(fontSize: 10),
-                  ),
+                SizedBox(
+                  height: 5,
                 ),
-                Container(
-                  child: Text(
-                    article.content,
-                    style: GoogleFonts.sourceSansPro(fontSize: 15),
-                  ),
-                )
+                Text(
+                  article.createdAt,
+                  style: GoogleFonts.nunitoSans(fontSize: 12),
+                ),
               ],
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(20),
+            child: Text(
+              article.content,
+              style: GoogleFonts.nunitoSans(fontSize: 15),
             ),
           ),
         ],

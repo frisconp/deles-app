@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return BasePage(
-      title: 'Beranda',
+      title: 'Home',
       body: Expanded(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,8 +60,8 @@ class _HomePageState extends State<HomePage> {
             Container(
               margin: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
               child: Text(
-                'Berita Terbaru',
-                style: GoogleFonts.sourceSansPro(
+                'Latest News',
+                style: GoogleFonts.nunitoSans(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
                 ),

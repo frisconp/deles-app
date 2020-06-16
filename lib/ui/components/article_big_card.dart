@@ -48,7 +48,7 @@ class ArticleBigCard extends StatelessWidget {
                   children: <Widget>[
                     Text(
                       article.title,
-                      style: GoogleFonts.sourceSansPro(
+                      style: GoogleFonts.nunitoSans(
                         color: Colors.white,
                         fontSize: 20,
                         fontWeight: FontWeight.bold,

@@ -60,7 +60,7 @@ class ArticleListCard extends StatelessWidget {
                         margin: EdgeInsets.only(bottom: 5),
                         child: Text(
                           article.title,
-                          style: GoogleFonts.sourceSansPro(
+                          style: GoogleFonts.nunitoSans(
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
                           ),
@@ -68,7 +68,7 @@ class ArticleListCard extends StatelessWidget {
                       ),
                       Text(
                         article.createdAt,
-                        style: GoogleFonts.sourceSansPro(fontSize: 12),
+                        style: GoogleFonts.nunitoSans(fontSize: 12),
                       )
                     ],
                   ),

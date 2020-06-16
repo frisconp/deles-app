@@ -11,7 +11,7 @@ class _HistoryPageState extends State<HistoryPage> {
   @override
   Widget build(BuildContext context) {
     return BasePage(
-      title: 'Pesanan',
+      title: 'History',
       body: Expanded(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),

@@ -45,7 +45,7 @@ class _MainPageState extends State<MainPage> {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: GNav(
-              textStyle: GoogleFonts.sourceSansPro(
+              textStyle: GoogleFonts.nunitoSans(
                 fontSize: 15,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
@@ -54,7 +54,7 @@ class _MainPageState extends State<MainPage> {
               activeColor: Colors.white,
               color: Color.fromRGBO(219, 219, 219, 1),
               iconSize: 20,
-              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 4),
+              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
               duration: Duration(milliseconds: 500),
               tabBackgroundColor: Theme.of(context).primaryColor,
               tabs: [

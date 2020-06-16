@@ -78,7 +78,7 @@ class _RegisterPageState extends State<RegisterPage> {
       children: <Widget>[
         Text(
           'Create Account',
-          style: GoogleFonts.sourceSansPro(
+          style: GoogleFonts.nunitoSans(
             textStyle: TextStyle(
               fontSize: 30,
               fontWeight: FontWeight.bold,
@@ -87,7 +87,7 @@ class _RegisterPageState extends State<RegisterPage> {
         ),
         Text(
           'Please fill the following form to create an account.',
-          style: GoogleFonts.sourceSansPro(
+          style: GoogleFonts.nunitoSans(
             textStyle: TextStyle(
               fontSize: 15,
             ),
@@ -116,7 +116,7 @@ class _RegisterPageState extends State<RegisterPage> {
       ),
       child: TextField(
         controller: nameController,
-        style: GoogleFonts.sourceSansPro(
+        style: GoogleFonts.nunitoSans(
           textStyle: TextStyle(
             fontSize: 15,
           ),
@@ -137,7 +137,7 @@ class _RegisterPageState extends State<RegisterPage> {
           ),
           contentPadding: EdgeInsets.all(10),
           hintText: 'Full Name',
-          hintStyle: GoogleFonts.sourceSansPro(
+          hintStyle: GoogleFonts.nunitoSans(
             color: Color.fromRGBO(219, 219, 219, 1),
           ),
         ),
@@ -161,7 +161,7 @@ class _RegisterPageState extends State<RegisterPage> {
       ),
       child: TextField(
         controller: emailController,
-        style: GoogleFonts.sourceSansPro(
+        style: GoogleFonts.nunitoSans(
           textStyle: TextStyle(
             fontSize: 15,
           ),
@@ -181,8 +181,8 @@ class _RegisterPageState extends State<RegisterPage> {
             borderSide: BorderSide.none,
           ),
           contentPadding: EdgeInsets.all(10),
-          hintText: 'E-mail',
-          hintStyle: GoogleFonts.sourceSansPro(
+          hintText: 'Email',
+          hintStyle: GoogleFonts.nunitoSans(
             color: Color.fromRGBO(219, 219, 219, 1),
           ),
         ),
@@ -206,7 +206,7 @@ class _RegisterPageState extends State<RegisterPage> {
       ),
       child: TextField(
         controller: phoneNumberController,
-        style: GoogleFonts.sourceSansPro(
+        style: GoogleFonts.nunitoSans(
           textStyle: TextStyle(
             fontSize: 15,
           ),
@@ -227,7 +227,7 @@ class _RegisterPageState extends State<RegisterPage> {
           ),
           contentPadding: EdgeInsets.all(10),
           hintText: 'Phone Number',
-          hintStyle: GoogleFonts.sourceSansPro(
+          hintStyle: GoogleFonts.nunitoSans(
             color: Color.fromRGBO(219, 219, 219, 1),
           ),
         ),
@@ -254,7 +254,7 @@ class _RegisterPageState extends State<RegisterPage> {
       child: TextField(
         controller: passwordController,
         obscureText: true,
-        style: GoogleFonts.sourceSansPro(
+        style: GoogleFonts.nunitoSans(
           textStyle: TextStyle(
             fontSize: 15,
           ),
@@ -275,7 +275,7 @@ class _RegisterPageState extends State<RegisterPage> {
           ),
           contentPadding: EdgeInsets.all(10),
           hintText: 'Password',
-          hintStyle: GoogleFonts.sourceSansPro(
+          hintStyle: GoogleFonts.nunitoSans(
             textStyle: TextStyle(
               color: Color.fromRGBO(219, 219, 219, 1),
             ),
@@ -304,7 +304,7 @@ class _RegisterPageState extends State<RegisterPage> {
       child: TextField(
         controller: confirmPasswordController,
         obscureText: true,
-        style: GoogleFonts.sourceSansPro(
+        style: GoogleFonts.nunitoSans(
           textStyle: TextStyle(
             fontSize: 15,
           ),
@@ -325,7 +325,7 @@ class _RegisterPageState extends State<RegisterPage> {
           ),
           contentPadding: EdgeInsets.all(10),
           hintText: 'Confirmation Password',
-          hintStyle: GoogleFonts.sourceSansPro(
+          hintStyle: GoogleFonts.nunitoSans(
             textStyle: TextStyle(
               color: Color.fromRGBO(219, 219, 219, 1),
             ),
@@ -361,7 +361,7 @@ class _RegisterPageState extends State<RegisterPage> {
           child: Center(
             child: Text(
               'Create Account',
-              style: GoogleFonts.sourceSansPro(
+              style: GoogleFonts.nunitoSans(
                 textStyle: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
@@ -384,7 +384,7 @@ class _RegisterPageState extends State<RegisterPage> {
           margin: EdgeInsets.only(bottom: 10),
           child: Text(
             'Already have an account?',
-            style: GoogleFonts.sourceSansPro(
+            style: GoogleFonts.nunitoSans(
               fontSize: 15,
               color: Color.fromRGBO(219, 219, 219, 1),
             ),
@@ -411,7 +411,7 @@ class _RegisterPageState extends State<RegisterPage> {
               child: Center(
                 child: Text(
                   'Login',
-                  style: GoogleFonts.sourceSansPro(
+                  style: GoogleFonts.nunitoSans(
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
                     color: Color.fromRGBO(240, 165, 0, 1),

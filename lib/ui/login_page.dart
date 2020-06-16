@@ -67,7 +67,7 @@ class _LoginPageState extends State<LoginPage> {
       children: <Widget>[
         Text(
           'Login',
-          style: GoogleFonts.sourceSansPro(
+          style: GoogleFonts.nunitoSans(
             textStyle: TextStyle(
               fontSize: 30,
               fontWeight: FontWeight.bold,
@@ -76,7 +76,7 @@ class _LoginPageState extends State<LoginPage> {
         ),
         Text(
           'Please login to continue.',
-          style: GoogleFonts.sourceSansPro(
+          style: GoogleFonts.nunitoSans(
             textStyle: TextStyle(
               fontSize: 15,
             ),
@@ -105,7 +105,7 @@ class _LoginPageState extends State<LoginPage> {
       ),
       child: TextField(
         controller: emailController,
-        style: GoogleFonts.sourceSansPro(
+        style: GoogleFonts.nunitoSans(
           textStyle: TextStyle(
             fontSize: 15,
           ),
@@ -125,8 +125,8 @@ class _LoginPageState extends State<LoginPage> {
             borderSide: BorderSide.none,
           ),
           contentPadding: EdgeInsets.all(10),
-          hintText: 'E-mail',
-          hintStyle: GoogleFonts.sourceSansPro(
+          hintText: 'Email',
+          hintStyle: GoogleFonts.nunitoSans(
             color: Color.fromRGBO(219, 219, 219, 1),
           ),
         ),
@@ -153,7 +153,7 @@ class _LoginPageState extends State<LoginPage> {
       child: TextField(
         controller: passwordController,
         obscureText: true,
-        style: GoogleFonts.sourceSansPro(
+        style: GoogleFonts.nunitoSans(
           textStyle: TextStyle(
             fontSize: 15,
           ),
@@ -174,7 +174,7 @@ class _LoginPageState extends State<LoginPage> {
           ),
           contentPadding: EdgeInsets.all(10),
           hintText: 'Password',
-          hintStyle: GoogleFonts.sourceSansPro(
+          hintStyle: GoogleFonts.nunitoSans(
             textStyle: TextStyle(
               color: Color.fromRGBO(219, 219, 219, 1),
             ),
@@ -206,7 +206,7 @@ class _LoginPageState extends State<LoginPage> {
           child: Center(
             child: Text(
               'Login',
-              style: GoogleFonts.sourceSansPro(
+              style: GoogleFonts.nunitoSans(
                 textStyle: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.bold,
@@ -229,7 +229,7 @@ class _LoginPageState extends State<LoginPage> {
           margin: EdgeInsets.only(bottom: 10),
           child: Text(
             'Don\'t have an account?',
-            style: GoogleFonts.sourceSansPro(
+            style: GoogleFonts.nunitoSans(
               fontSize: 15,
               color: Color.fromRGBO(219, 219, 219, 1),
             ),
@@ -256,7 +256,7 @@ class _LoginPageState extends State<LoginPage> {
               child: Center(
                 child: Text(
                   'Create Account',
-                  style: GoogleFonts.sourceSansPro(
+                  style: GoogleFonts.nunitoSans(
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
                     color: Color.fromRGBO(240, 165, 0, 1),
