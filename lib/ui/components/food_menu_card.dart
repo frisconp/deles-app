@@ -1,14 +1,23 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:delesapp/data/models/menu_model.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:meta/meta.dart';
 
 class FoodMenuCard extends StatefulWidget {
+  final Menu menu;
+
+  const FoodMenuCard({Key key, @required this.menu}) : super(key: key);
   @override
-  _FoodMenuCardState createState() => _FoodMenuCardState();
+  _FoodMenuCardState createState() => _FoodMenuCardState(menu: this.menu);
 }
 
 class _FoodMenuCardState extends State<FoodMenuCard> {
+  final Menu menu;
+
   int orderAmount = 0;
+
+  _FoodMenuCardState({@required this.menu});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +40,7 @@ class _FoodMenuCardState extends State<FoodMenuCard> {
           Flexible(
             flex: 2,
             child: CachedNetworkImage(
-              imageUrl: 'http://via.placeholder.com/350x350',
+              imageUrl: menu.photo,
               imageBuilder: (context, imageProvider) => Container(
                 decoration: BoxDecoration(
                   image: DecorationImage(
@@ -60,7 +69,7 @@ class _FoodMenuCardState extends State<FoodMenuCard> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(
-                        'Ayam Telur Pak Hartono',
+                        menu.name,
                         style: GoogleFonts.nunitoSans(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,
@@ -70,7 +79,7 @@ class _FoodMenuCardState extends State<FoodMenuCard> {
                         height: 8,
                       ),
                       Text(
-                        'Rp15.000',
+                        menu.price,
                         style: GoogleFonts.nunitoSans(
                           fontSize: 15,
                           fontWeight: FontWeight.bold,

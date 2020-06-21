@@ -10,4 +10,7 @@ class ApiUrlList {
 
   // Article
   static String getAllArticles = serverUrl + '/api/article';
+
+  // Menu
+  static String getAllMenus = serverUrl + '/api/menu';
 }
