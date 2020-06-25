@@ -1,4 +1,5 @@
 import 'package:delesapp/bloc/article_bloc/article_bloc.dart';
+import 'package:delesapp/bloc/cart_bloc/cart_bloc.dart';
 import 'package:delesapp/bloc/login_bloc/login_bloc.dart';
 import 'package:delesapp/bloc/menu_bloc/menu_bloc.dart';
 import 'package:delesapp/bloc/register_bloc/register_bloc.dart';
@@ -55,6 +56,7 @@ class MyApp extends StatelessWidget {
         BlocProvider<MenuBloc>(
           create: (context) => MenuBloc(repository: MenuRepositoryList()),
         ),
+        BlocProvider<CartBloc>(create: (context) => CartBloc()),
       ],
       child: FlutterEasyLoading(
         child: MaterialApp(

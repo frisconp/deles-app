@@ -4,6 +4,7 @@ import 'package:delesapp/bloc/menu_bloc/menu_state.dart';
 import 'package:delesapp/data/models/menu_model.dart';
 import 'package:delesapp/ui/base_page.dart';
 import 'package:delesapp/ui/components/food_menu_card.dart';
+import 'package:delesapp/ui/pages/cart_list_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -15,6 +16,8 @@ class ListMenuPage extends StatefulWidget {
 
 class _ListMenuPageState extends State<ListMenuPage> {
   MenuBloc _menuBloc;
+
+  double paymentTotal = 0;
 
   @override
   void initState() {
@@ -113,13 +116,27 @@ class _ListMenuPageState extends State<ListMenuPage> {
                 color: Theme.of(context).primaryColor,
                 borderRadius: BorderRadius.circular(5),
               ),
-              child: Center(
-                child: Text(
-                  'Lihat Pesanan Anda',
-                  style: GoogleFonts.nunitoSans(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
+              child: Material(
+                color: Colors.transparent,
+                borderRadius: BorderRadius.circular(5),
+                child: InkWell(
+                  splashColor: Colors.black.withOpacity(.05),
+                  borderRadius: BorderRadius.circular(5),
+                  onTap: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => CartListPage()));
+                  },
+                  child: Center(
+                    child: Text(
+                      'Your Cart',
+                      style: GoogleFonts.nunitoSans(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -134,13 +151,24 @@ class _ListMenuPageState extends State<ListMenuPage> {
                 color: Color.fromRGBO(219, 219, 219, 1),
                 borderRadius: BorderRadius.circular(5),
               ),
-              child: Center(
-                child: Text(
-                  'Batalkan',
-                  style: GoogleFonts.nunitoSans(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
+              child: Material(
+                color: Colors.transparent,
+                borderRadius: BorderRadius.circular(5),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pushNamedAndRemoveUntil(
+                        context, '/home', (route) => false);
+                  },
+                  borderRadius: BorderRadius.circular(5),
+                  child: Center(
+                    child: Text(
+                      'Cancel',
+                      style: GoogleFonts.nunitoSans(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                    ),
                   ),
                 ),
               ),
