@@ -4,6 +4,7 @@ import 'package:delesapp/bloc/order_bloc/order_state.dart';
 import 'package:delesapp/data/models/cart_item_model.dart';
 import 'package:delesapp/res/rupiah.dart';
 import 'package:delesapp/ui/components/food_menu_card.dart';
+import 'package:delesapp/ui/pages/checkout_page.dart';
 import 'package:delesapp/ui/pages/list_menu_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -36,7 +37,10 @@ class _CartListPageState extends State<CartListPage> {
           EasyLoading.show(status: 'Processing');
         }
         if (state is OrderCreatedState) {
-          EasyLoading.showSuccess('Your order was sent!');
+          EasyLoading.showSuccess('Your order was sent!',
+              duration: Duration(seconds: 2));
+
+          _redirectToPaymentPage(state.responseData['redirect_url']);
         }
         if (state is OrderErrorState) {
           EasyLoading.showError(state.message);
@@ -183,6 +187,16 @@ class _CartListPageState extends State<CartListPage> {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  _redirectToPaymentPage(String paymentUrl) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => CheckoutPage(
+          paymentUrl: paymentUrl,
+        ),
       ),
     );
   }

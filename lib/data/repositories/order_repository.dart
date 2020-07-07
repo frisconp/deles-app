@@ -33,7 +33,7 @@ class OrderRepositoryList implements OrderRepository {
       print(response.body);
       return {
         'token': null,
-        'paymentUrl': null,
+        'redirect_url': null,
       };
     }
   }
