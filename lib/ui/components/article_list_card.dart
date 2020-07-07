@@ -14,7 +14,7 @@ class ArticleListCard extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(bottom: 10),
       width: double.infinity,
-      height: 80,
+      height: 100,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(5),

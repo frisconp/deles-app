@@ -1,91 +1,31 @@
-import 'package:delesapp/res/rupiah.dart';
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'dart:async';
 
-class CheckoutPage extends StatelessWidget {
+import 'package:flutter/material.dart';
+import 'package:webview_flutter/webview_flutter.dart';
+
+class CheckoutPage extends StatefulWidget {
+  @override
+  _CheckoutPageState createState() => _CheckoutPageState();
+}
+
+class _CheckoutPageState extends State<CheckoutPage> {
+  final Completer<WebViewController> _controller =
+      Completer<WebViewController>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      appBar: AppBar(
-        title: Text(
-          'Checkout',
-          style: GoogleFonts.nunitoSans(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
+      body: Builder(builder: (context) {
+        return SafeArea(
+          child: WebView(
+            initialUrl: 'https://google.com',
+            javascriptMode: JavascriptMode.unrestricted,
+            onWebViewCreated: (WebViewController webViewController) {
+              _controller.complete(webViewController);
+            },
           ),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.white,
-        elevation: 3,
-        leading: Icon(Icons.close),
-      ),
-      bottomNavigationBar: Container(
-        width: MediaQuery.of(context).size.width,
-        padding: const EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              blurRadius: 10,
-              offset: Offset(0, -2),
-              color: Colors.black.withOpacity(.05),
-            )
-          ],
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text(
-                  'Total',
-                  style: GoogleFonts.nunitoSans(
-                    fontSize: 15,
-                  ),
-                ),
-                Text(
-                  rupiah(150000),
-                  style: GoogleFonts.nunitoSans(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                    color: Theme.of(context).primaryColor,
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Container(
-              height: 45,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Theme.of(context).primaryColor,
-                borderRadius: BorderRadius.circular(5),
-              ),
-              child: Center(
-                child: Text(
-                  'ORDER NOW',
-                  style: GoogleFonts.nunitoSans(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-      body: SafeArea(
-        child: Container(
-          padding: const EdgeInsets.all(10),
-          width: double.infinity,
-        ),
-      ),
+        );
+      }),
     );
   }
 }

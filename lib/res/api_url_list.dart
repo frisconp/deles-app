@@ -13,4 +13,7 @@ class ApiUrlList {
 
   // Menu
   static String getAllMenus = serverUrl + '/api/menu';
+
+  // Order
+  static String storeOrder = serverUrl + '/api/order/store';
 }
