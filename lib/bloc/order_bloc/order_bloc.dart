@@ -32,11 +32,7 @@ class OrderBloc extends Bloc<OrderEvent, OrderState> {
           'order_items': orderItems,
         };
 
-        print(requestData);
-
         var orderData = await repository.createNewOrder(requestData);
-
-        print(orderData);
 
         if (orderData['token'] != null) {
           yield OrderCreatedState(responseData: orderData);

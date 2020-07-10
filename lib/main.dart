@@ -3,12 +3,14 @@ import 'package:delesapp/bloc/cart_bloc/cart_bloc.dart';
 import 'package:delesapp/bloc/login_bloc/login_bloc.dart';
 import 'package:delesapp/bloc/menu_bloc/menu_bloc.dart';
 import 'package:delesapp/bloc/order_bloc/order_bloc.dart';
+import 'package:delesapp/bloc/profile_bloc/profile_bloc.dart';
 import 'package:delesapp/bloc/register_bloc/register_bloc.dart';
 import 'package:delesapp/data/repositories/article_repository.dart';
 import 'package:delesapp/data/repositories/login_repository.dart';
 import 'package:delesapp/data/repositories/menu_repository.dart';
 import 'package:delesapp/data/repositories/order_repository.dart';
 import 'package:delesapp/data/repositories/register_repository.dart';
+import 'package:delesapp/data/repositories/user_repository.dart';
 import 'package:delesapp/splash.dart';
 import 'package:delesapp/ui/login_page.dart';
 import 'package:delesapp/ui/main_page.dart';
@@ -61,6 +63,9 @@ class MyApp extends StatelessWidget {
         BlocProvider<CartBloc>(create: (context) => CartBloc()),
         BlocProvider<OrderBloc>(
           create: (context) => OrderBloc(repository: OrderRepositoryList()),
+        ),
+        BlocProvider<ProfileBloc>(
+          create: (context) => ProfileBloc(repository: UserRepositoryList()),
         ),
       ],
       child: FlutterEasyLoading(

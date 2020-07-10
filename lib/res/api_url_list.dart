@@ -7,6 +7,7 @@ class ApiUrlList {
   // Auth
   static String validateLogin = serverUrl + '/api/auth/login';
   static String createAccount = serverUrl + '/api/auth/register';
+  static String loggedInUser = serverUrl + '/api/auth/detail';
 
   // Article
   static String getAllArticles = serverUrl + '/api/article';

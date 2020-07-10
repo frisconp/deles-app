@@ -13,7 +13,6 @@ class BasePage extends StatelessWidget {
       backgroundColor: ThemeData().scaffoldBackgroundColor,
       body: SafeArea(
         child: Column(
-          mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             _header(),
             body,

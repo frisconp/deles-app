@@ -30,7 +30,6 @@ class OrderRepositoryList implements OrderRepository {
     if (response.statusCode == 200) {
       return (jsonData as Map<String, dynamic>);
     } else {
-      print(response.body);
       return {
         'token': null,
         'redirect_url': null,
