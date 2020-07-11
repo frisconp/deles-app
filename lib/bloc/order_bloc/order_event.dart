@@ -11,3 +11,8 @@ class CreateOrderEvent extends OrderEvent {
   @override
   List<Object> get props => throw UnimplementedError();
 }
+
+class GetOrderHistoryEvent extends OrderEvent {
+  @override
+  List<Object> get props => throw UnimplementedError();
+}

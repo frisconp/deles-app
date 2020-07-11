@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:delesapp/bloc/order_bloc/order_event.dart';
 import 'package:delesapp/bloc/order_bloc/order_state.dart';
+import 'package:delesapp/data/models/order_model.dart';
 import 'package:delesapp/data/repositories/order_repository.dart';
 import 'package:meta/meta.dart';
 import 'package:delesapp/res/global_variables.dart' as globals;
@@ -41,6 +42,21 @@ class OrderBloc extends Bloc<OrderEvent, OrderState> {
         }
       } catch (e) {
         print(e);
+        yield OrderErrorState(message: e.toString());
+      }
+    }
+
+    if (event is GetOrderHistoryEvent) {
+      yield OrderLoadingState();
+      try {
+        List<Order> orderHistories = await repository.getOrderHistories();
+
+        if (orderHistories.length > 0) {
+          yield OrderHistorySuccessState(orderHistories: orderHistories);
+        } else {
+          yield OrderHistoryEmptyState();
+        }
+      } catch (e) {
         yield OrderErrorState(message: e.toString());
       }
     }

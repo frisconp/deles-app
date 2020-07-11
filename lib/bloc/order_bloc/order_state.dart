@@ -1,3 +1,4 @@
+import 'package:delesapp/data/models/order_model.dart';
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 
@@ -27,6 +28,20 @@ class OrderErrorState extends OrderState {
 
   OrderErrorState({@required this.message});
 
+  @override
+  List<Object> get props => throw UnimplementedError();
+}
+
+class OrderHistorySuccessState extends OrderState {
+  final List<Order> orderHistories;
+
+  OrderHistorySuccessState({@required this.orderHistories});
+
+  @override
+  List<Object> get props => throw UnimplementedError();
+}
+
+class OrderHistoryEmptyState extends OrderState {
   @override
   List<Object> get props => throw UnimplementedError();
 }

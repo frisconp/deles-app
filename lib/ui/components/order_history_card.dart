@@ -1,67 +1,111 @@
-import 'package:cached_network_image/cached_network_image.dart';
+import 'package:delesapp/data/models/order_model.dart';
+import 'package:delesapp/res/rupiah.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class OrderHistoryCard extends StatelessWidget {
+  final Order order;
+
+  const OrderHistoryCard({Key key, this.order}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 100,
-      margin: EdgeInsets.only(bottom: 10),
-      padding: EdgeInsets.all(10),
+      margin: EdgeInsets.only(bottom: 15, left: 15, right: 15),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Colors.transparent,
+        borderRadius: BorderRadius.circular(3),
         border: Border.all(
-          color: Colors.black26,
           width: 1,
+          color: Color.fromRGBO(219, 219, 219, 1),
         ),
-        borderRadius: BorderRadius.circular(5),
       ),
-      child: Row(
+      child: Column(
         children: <Widget>[
-          CachedNetworkImage(
-            imageUrl: 'http://via.placeholder.com/350x350',
-            imageBuilder: (context, imageProvider) => Container(
-              height: 80,
-              width: 80,
-              margin: EdgeInsets.only(right: 10),
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: imageProvider,
-                  fit: BoxFit.cover,
-                ),
-                borderRadius: BorderRadius.circular(5),
+          Container(
+            padding: EdgeInsets.symmetric(vertical: 10),
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: Color.fromRGBO(243, 243, 243, 1),
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(3),
+                topRight: Radius.circular(3),
               ),
             ),
-            placeholder: (context, url) => CircularProgressIndicator(),
-            errorWidget: (context, url, error) => Icon(Icons.error),
-          ),
-          Expanded(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text(
-                  '24 Juli 2020',
-                  style: GoogleFonts.sourceSansPro(
-                    fontSize: 20,
+                  order.details.length.toString() + ' Orders',
+                  style: GoogleFonts.nunitoSans(
+                    fontSize: 17,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
-                  '2 Pesanan',
-                  style: GoogleFonts.sourceSansPro(
-                    fontSize: 15,
+                  'July 27, 2020',
+                  style: GoogleFonts.nunitoSans(
+                    fontSize: 10,
+                    fontWeight: FontWeight.normal,
                   ),
                 ),
-                Text(
-                  'Rp80.000',
-                  style: GoogleFonts.sourceSansPro(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Theme.of(context).primaryColor,
-                  ),
+              ],
+            ),
+          ),
+          Container(
+            width: double.infinity,
+            padding: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(3),
+                bottomRight: Radius.circular(3),
+              ),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      'TOTAL',
+                      style: GoogleFonts.nunitoSans(
+                        fontSize: 10,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromRGBO(240, 165, 0, 1),
+                      ),
+                    ),
+                    Text(
+                      rupiah(double.parse(
+                          order.paymentTotal == null ? 0 : order.paymentTotal)),
+                      style: GoogleFonts.nunitoSans(
+                        fontSize: 13,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: <Widget>[
+                    Text(
+                      'STATUS',
+                      style: GoogleFonts.nunitoSans(
+                        fontSize: 10,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromRGBO(240, 165, 0, 1),
+                      ),
+                    ),
+                    Text(
+                      order.status.toUpperCase(),
+                      style: GoogleFonts.nunitoSans(
+                        fontSize: 13,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),

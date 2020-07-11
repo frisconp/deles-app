@@ -17,4 +17,5 @@ class ApiUrlList {
 
   // Order
   static String storeOrder = serverUrl + '/api/order/store';
+  static String orderHistory = serverUrl + '/api/order/history';
 }
