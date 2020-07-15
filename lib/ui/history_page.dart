@@ -33,14 +33,11 @@ class _HistoryPageState extends State<HistoryPage> {
             var _returnCondition;
             if (state is OrderInitialState) {
               _returnCondition = BasePage().buildLoading();
-            }
-            if (state is OrderLoadingState) {
+            } else if (state is OrderLoadingState) {
               _returnCondition = BasePage().buildLoading();
-            }
-            if (state is OrderHistorySuccessState) {
+            } else if (state is OrderHistorySuccessState) {
               _returnCondition = _buildOrderHistories(state.orderHistories);
-            }
-            if (state is OrderHistoryEmptyState) {
+            } else if (state is OrderHistoryEmptyState) {
               _returnCondition = _buildEmptyHistory();
             }
             return _returnCondition;
