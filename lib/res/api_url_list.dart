@@ -1,5 +1,6 @@
 class ApiUrlList {
   static String serverUrl = 'http://api.delesapp.tutorteknik.com';
+  // static String serverUrl = 'http://10.0.2.2:8000';
 
   // Check if server is ready
   static String checkApiServer = serverUrl + '/api/check';

@@ -1,6 +1,9 @@
+import 'dart:async';
+
 import 'package:delesapp/res/api_url_list.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
@@ -12,16 +15,24 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   checkApiProvider() async {
-    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-    var response = await http.get(ApiUrlList.checkApiServer);
-    if (response.statusCode == 200) {
-      String token = sharedPreferences.getString('token');
-      if (token != null) {
-        Navigator.of(context)
-            .pushNamedAndRemoveUntil('/home', (route) => false);
-      } else {
-        Navigator.of(context).pushReplacementNamed('/login');
+    try {
+      SharedPreferences sharedPreferences =
+          await SharedPreferences.getInstance();
+      var response = await http
+          .get(ApiUrlList.checkApiServer)
+          .timeout(Duration(seconds: 5));
+      if (response.statusCode == 200) {
+        String token = sharedPreferences.getString('token');
+        if (token != null) {
+          Navigator.of(context)
+              .pushNamedAndRemoveUntil('/home', (route) => false);
+        } else {
+          Navigator.of(context).pushReplacementNamed('/login');
+        }
       }
+    } on TimeoutException catch (_) {
+      EasyLoading.showError('Service unavailable, try again later.',
+          duration: Duration(minutes: 1));
     }
   }
 
