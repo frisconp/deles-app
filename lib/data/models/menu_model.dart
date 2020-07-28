@@ -5,6 +5,7 @@ class Menu {
   String name;
   String photo;
   String price;
+  String stockAmount;
   String userId;
   String menuCategoryId;
   String createdAt;
@@ -16,6 +17,7 @@ class Menu {
     this.name,
     this.photo,
     this.price,
+    this.stockAmount,
     this.userId,
     this.menuCategoryId,
     this.createdAt,
@@ -28,6 +30,7 @@ class Menu {
     name = json['name'];
     photo = json['photo'];
     price = json['price'];
+    stockAmount = json['stock_amount'];
     userId = json['user_id'];
     menuCategoryId = json['menu_category_id'];
     createdAt = json['created_at'];
@@ -41,6 +44,7 @@ class Menu {
     data['name'] = this.name;
     data['photo'] = this.photo;
     data['price'] = this.price;
+    data['stock_amount'] = this.stockAmount;
     data['user_id'] = this.userId;
     data['menu_category_id'] = this.menuCategoryId;
     data['created_at'] = this.createdAt;

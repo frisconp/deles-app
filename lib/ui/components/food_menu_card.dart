@@ -95,6 +95,16 @@ class _FoodMenuCardState extends State<FoodMenuCard> {
                             color: Theme.of(context).primaryColor,
                           ),
                         ),
+                        SizedBox(
+                          height: 8,
+                        ),
+                        Text(
+                          'Tersisa ' + menu.stockAmount + ' Porsi',
+                          style: GoogleFonts.nunitoSans(
+                            fontSize: 15,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
                       ],
                     ),
                     IntrinsicHeight(

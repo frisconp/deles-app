@@ -8,6 +8,7 @@ import 'package:delesapp/ui/components/article_list_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:delesapp/res/global_variables.dart' as globals;
 
 class HomePage extends StatefulWidget {
   @override
@@ -20,6 +21,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
+    globals.cartItemList.clear();
     articleBloc = BlocProvider.of<ArticleBloc>(context);
     articleBloc.add(GetArticlesEvent());
   }
